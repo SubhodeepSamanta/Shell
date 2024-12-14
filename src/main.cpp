@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main() {
-  // Flush after every std::cout / std:cerr
+
   std::cout << std::unitbuf;
   std::cerr << std::unitbuf;
 
@@ -15,9 +15,17 @@ int main() {
     string command = input.substr(0,4);
     string echo_output = input.substr(5);
 
+    string cmd = input.substr(5);
     if(command=="echo"){
       cout<<echo_output<<"\n";
-    }else{
+    }else if(input.substr(0,5)=="type "){
+      if(cmd.substr(0,4)=="echo"||cmd.substr(0,4)=="exit"||cmd.substr(0,4)=="type"){
+      cout<<cmd<<" is a shell builtin\n";
+      }else{
+      std::cout << input << ": command not found\n"; 
+    }
+    }
+    else{
       std::cout << input << ": command not found\n"; 
     }
     
