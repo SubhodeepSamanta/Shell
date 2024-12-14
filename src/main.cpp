@@ -10,5 +10,5 @@ int main() {
   
   std::string input;
   std::getline(std::cin, input);
-  cout<<input<<": Command not found";
+  cout<<input<<": Command not found \n";
 }
