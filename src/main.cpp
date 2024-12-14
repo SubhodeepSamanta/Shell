@@ -10,12 +10,18 @@ int main() {
   std::getline(std::cin, input);
 
   while(true){
-    if(input!="exit 0"){
-      std::cout << input << ": command not found\n"; 
-      std::cout << "$ ";
-      std::getline(std::cin, input);
+    if(input=="exit 0") return 0;
+
+    string command = input.substr(0,4);
+    string echo_output = input.substr(5);
+
+    if(command=="echo"){
+      cout<<echo_output<<"\n";
     }else{
-      return 0;
-  }
+      std::cout << input << ": command not found\n"; 
+    }
+    
+    std::cout << "$ ";
+    std::getline(std::cin, input);
   }
 }
