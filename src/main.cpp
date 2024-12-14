@@ -22,7 +22,7 @@ int main() {
       if(cmd.substr(0,4)=="echo"||cmd.substr(0,4)=="exit"||cmd.substr(0,4)=="type"){
       cout<<cmd<<" is a shell builtin\n";
       }else{
-      std::cout << cmd << ": command not found\n"; 
+      std::cout << cmd << ": not found\n"; 
     }
     }
     else{
