@@ -15,10 +15,10 @@ int main() {
     string command = input.substr(0,4);
     string echo_output = input.substr(5);
 
-    string cmd = input.substr(5);
     if(command=="echo"){
       cout<<echo_output<<"\n";
     }else if(input.substr(0,5)=="type "){
+      string cmd = input.substr(5);
       if(cmd.substr(0,4)=="echo"||cmd.substr(0,4)=="exit"||cmd.substr(0,4)=="type"){
       cout<<cmd<<" is a shell builtin\n";
       }else{
